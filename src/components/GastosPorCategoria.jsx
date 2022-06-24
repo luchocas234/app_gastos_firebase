@@ -1,5 +1,15 @@
 import React from "react";
 
+import Header from "../elementos/Header";
+
 export default function GastosPorCategoria() {
-  return <div>GastosPorCategoria</div>;
+  return (
+    <>
+      <Header
+        helmet={"Gastos Por Categoria"}
+        btnback
+        title={"Gastos por Categoria"}
+      />
+    </>
+  );
 }

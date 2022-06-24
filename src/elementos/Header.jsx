@@ -1,38 +1,64 @@
 import React from "react";
+import Helmet from "react-helmet";
+import { NavLink } from "react-router-dom";
+import BtnBack from "./BtnBack";
 
-export default function Header() {
+export default function Header({
+  helmet,
+  title,
+  twobtn,
+  iniciobtn,
+  regisbtn,
+  btnback,
+  rightbtn,
+}) {
   return (
     <>
+      <Helmet>
+        <title>{helmet}</title>
+      </Helmet>
+
       <div className="flex w-full justify-start lg:justify-between p-10 ">
-        <div className="w-full flex flex-col-reverse lg:flex-row items-center lg:justify-between ">
-          <h1 className="uppercase text-3xl lg:text-4xl"> Agregar Gasto</h1>
-          <div className="flex justify-between items-center gap-2 mb-4 lg:m-0">
-            <button className="btn">Categorias</button>
-            <button className="btn">Lista de Gastos</button>
+        {btnback && (
+          <div className="w-full flex flex-col gap-2 lg:flex-row  items-center lg:justify-between ">
+            <BtnBack />
+            <h1 className="uppercase text-3xl font-thin lg:text-4xl">
+              {title}
+            </h1>
           </div>
-        </div>
+        )}
+
+        {rightbtn && (
+          <div className="w-full flex flex-col-reverse gap-4 lg:flex-row  items-center lg:justify-between ">
+            <h1 className="uppercase text-3xl font-thin lg:text-4xl">
+              {title}
+            </h1>
+            {iniciobtn && (
+              <NavLink to={"/iniciar-sesion"}>
+                <button className="btn">Iniciar Sesion</button>
+              </NavLink>
+            )}
+            {twobtn && (
+              <div className="flex justify-between items-center gap-2 mb-4 lg:m-0">
+                <NavLink to={"/categorias"}>
+                  <button className="btn">Categorias</button>
+                </NavLink>
+                <NavLink to={"/lista"}>
+                  <button className="btn">Lista de Gastos</button>
+                </NavLink>
+                <NavLink to={"/"}>
+                  <button className="btn">X</button>
+                </NavLink>
+              </div>
+            )}
+            {regisbtn && (
+              <NavLink to={"/crear-cuenta"}>
+                <button className="btn">Registrarse</button>
+              </NavLink>
+            )}
+          </div>
+        )}
       </div>
     </>
   );
-} // const Boton = styled(Link)` // 	background: ${(props) => props.primario ? '#5B69E2' : '#000'};
-// 	width: ${(props) => props.conIcono ? '15.62rem' : 'auto'}; /* 250px */
-// 	margin-left: 1.25rem; /* 20px */
-// 	border: none;
-// 	border-radius: 0.625rem; /* 10px */
-// 	color: #fff; // 	font-family: 'Work Sans', sans-serif;
-// 	height: 3.75rem; /* 60px */
-// 	padding: 1.25rem 1.87rem; /* 20px 30px */
-// 	font-size: 1.25rem; /* 20px */
-// 	font-weight: 500;
-// 	cursor: pointer;
-// 	text-decoration: none;
-// 	display: inline-flex;
-// 	justify-content: space-between;
-// 	align-items: center;
-// 	outline: none;
-
-// 	svg {
-// 		height: ${(props) => props.iconoGrande ? '100%' : '0.75rem;'};  /* 12px */
-// 		fill: white;
-// 	}
-// `;
+}

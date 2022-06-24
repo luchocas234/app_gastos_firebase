@@ -35,10 +35,15 @@ body {
 
 .btn-primary {
   @apply px-5 py-3 
-  font-semibold text-white  bg-[#5B69E2] rounded-lg shadow-md;
+  text-white  bg-[#5B69E2] rounded-lg shadow-md;
 }
 
 .btn {
-  @apply px-5 py-3 
-  font-semibold text-white  rounded-lg shadow-md bg-black;
+  @apply px-5 py-2 
+  text-white flex justify-center items-center rounded-lg shadow-md bg-black;
+}
+
+.btn-icon {
+  @apply p-3
+   text-white flex justify-center items-center rounded-lg shadow-md bg-black;
 }
