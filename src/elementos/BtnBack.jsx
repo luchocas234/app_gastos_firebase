@@ -1,5 +1,5 @@
 import React from "react";
-import { nuseNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as IconoFlecha } from "../imagenes/flecha.svg";
 
 export default function BtnBack() {

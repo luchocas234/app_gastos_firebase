@@ -13,7 +13,7 @@
 }
 
 body {
-  background: #f9f9f9;
+  background: lightskyblue;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -39,11 +39,11 @@ body {
 }
 
 .btn {
-  @apply px-5 py-2 
+  @apply px-5 py-3 
   text-white flex justify-center items-center rounded-lg shadow-md bg-black;
 }
 
 .btn-icon {
-  @apply p-3
+  @apply py-3 px-4
    text-white flex justify-center items-center rounded-lg shadow-md bg-black;
 }
