@@ -20,14 +20,14 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         //Queremos comprobar si hay un usuario Logueado
         const cancelarSuscripcion = onAuthStateChanged(auth, (usuario) => {
-            setUsuario(usuario)
-            setCargando(false)
+            setUsuario(usuario);
+            setCargando(false);
         })
         return cancelarSuscripcion
     }, [])
 
     return (
-        <AuthContext.Provider value={{ usuario: true }}>
+        <AuthContext.Provider value={{ usuario: usuario }}>
             {!cargando && children}
         </AuthContext.Provider>
 

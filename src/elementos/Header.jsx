@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { NavLink } from "react-router-dom";
-import BotonCerrarSesion from "../components/BotonCerrarSesion";
+import BotonCerrarSesion from "../elementos/BotonCerrarSesion";
 import BtnBack from "./BtnBack";
 
 export default function Header({
@@ -19,7 +19,7 @@ export default function Header({
         <title>{helmet}</title>
       </Helmet>
 
-      <div className="flex w-full justify-start lg:justify-between p-10 ">
+      <div className="flex w-full justify-start lg:justify-between p-10  ">
         {btnback && (
           <div className="w-full flex flex-col gap-2 md:flex-row  items-center justify-between ">
             <BtnBack />
@@ -28,7 +28,7 @@ export default function Header({
         )}
 
         {rightbtn && (
-          <div className="w-full flex flex-col-reverse md:flex-row items-center gap-4 justify-between ">
+          <div className="w-full flex flex-col-reverse md:flex-row items-center gap-6 justify-between ">
             <h1 className="uppercase text-4xl text-center ">{title}</h1>
             {iniciobtn && (
               <NavLink to={"/iniciar-sesion"}>

@@ -89,7 +89,7 @@ export default function InicioSesion() {
         />
         <div className="flex justify-center m-10">
           <button className="btn-primary" type="submit">
-            Crear Cuenta
+            Iniciar Sesion
           </button>
         </div>
       </form>

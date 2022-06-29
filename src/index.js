@@ -23,7 +23,7 @@ root.render(
         <BrowserRouter>
 
 
-          <div className="bg-white w-[90%] m-auto max-w-[1100px] h-[95vh] lg:h-[90vh] lg:max-h-[800px] overflow-y-auto shadow-2xl rounded-lg flex flex-col justify-between relative z-20">
+          <div className="bg-white w-[90%] m-auto max-w-[1000px] h-[95vh] lg:h-[90vh] lg:max-h-[800px] overflow-y-auto shadow-2xl rounded-lg flex flex-col justify-between relative z-20">
             <Routes>
               <Route path="*" element={<Error404 />} />
               <Route path="/iniciar-sesion" element={<InicioSesion />} />
@@ -33,14 +33,15 @@ root.render(
                   <GastosPorCategoria />
                 </RutaPrivada>} />
 
-              <Route path='/lista' element={<RutaPrivada path="/lista">
-                <ListaDeGastos />
-              </RutaPrivada>} />
-              <Route path="/editar/:id" element={<RutaPrivada path="/editar/:id">
+              <Route path='/lista' element={
+                <RutaPrivada >
+                  <ListaDeGastos />
+                </RutaPrivada>} />
+              <Route path="/editar/:id" element={<RutaPrivada >
                 <EditarGasto />
               </RutaPrivada>} />
               <Route path="/" element={
-                <RutaPrivada path="/">
+                <RutaPrivada >
                   <App />
                 </RutaPrivada>
               } />
