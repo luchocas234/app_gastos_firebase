@@ -19,17 +19,17 @@ export default function Header({
         <title>{helmet}</title>
       </Helmet>
 
-      <div className="flex w-full justify-start lg:justify-between p-10  ">
+      <div className="flex w-full justify-start lg:justify-between py-10 p-6 lg:p-10  ">
         {btnback && (
           <div className="w-full flex flex-col gap-2 md:flex-row  items-center justify-between ">
             <BtnBack />
-            <h1 className="uppercase text-4xl text-center ">{title}</h1>
+            <h1 className="uppercase text-5xl text-center ">{title}</h1>
           </div>
         )}
 
         {rightbtn && (
           <div className="w-full flex flex-col-reverse md:flex-row items-center gap-6 justify-between ">
-            <h1 className="uppercase text-4xl text-center ">{title}</h1>
+            <h1 className="uppercase text-5xl text-center ">{title}</h1>
             {iniciobtn && (
               <NavLink to={"/iniciar-sesion"}>
                 <button className="btn">Iniciar Sesion</button>

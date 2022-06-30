@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { ReactComponent as IconoPlus } from "../imagenes/plus.svg";
 import SelectCategoria from "./SelectCategoria";
+import DatePicker from "./DatePicker";
+import "react-day-picker/dist/style.css";
 
 export default function FormularioGasto() {
   const [inputDescripcion, setInputDescripcion] = useState("");
   const [inputCantidad, setInputCantidad] = useState("");
   const [categoria, setCategoria] = useState("Hogar");
+
+  const [fecha, setFecha] = useState(new Date());
 
   const handleChange = (e) => {
     if (e.target.name === "desc") {
@@ -14,17 +18,24 @@ export default function FormularioGasto() {
       setInputCantidad(e.target.value.replace(/[^0-9.]/g, ""));
     }
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(inputDescripcion, inputCantidad, categoria, fecha);
+  };
   return (
     <>
-      <form className="p-8 gap-4 h-full flex w-full flex-col justify-around relative">
-        <div className="absolute h-[40px]  top-0 left-0 px-6 flex w-full justify-between z-40">
+      <form
+        className="p-8 gap-4  h-full min-h-[600px]  flex w-full flex-col justify-around relative"
+        onSubmit={handleSubmit}
+      >
+        <div className="absolute h-[40px]  top-0 left-0 px-6 flex w-full justify-between z-40 ">
           <SelectCategoria categoria={categoria} setCategoria={setCategoria} />
-          <p className="p-4 h-[40px] text-center flex items-center rounded-lg bg-red-50 z-40">
-            Fechas
-          </p>
+          <DatePicker fecha={fecha} setFecha={setFecha} />
         </div>
         <input
-          className="b-slate-400 mt-2 uppercase font-thin  border-b-2 text-center text-2xl h-[20%] sm:text-4xl "
+          className=" b-slate-400 mt-10 uppercase font-thin  border-b-2 text-center text-2xl h-[20%] sm:text-4xl "
           type="text"
           name="desc"
           placeholder="Descripción"

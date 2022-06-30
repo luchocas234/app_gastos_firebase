@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as IconDown } from "../imagenes/down.svg";
+import IconoCategoria from "./IconoCategoria";
 
 export default function SelectCategoria({ categoria, setCategoria }) {
   const categorias = [
@@ -21,27 +22,28 @@ export default function SelectCategoria({ categoria, setCategoria }) {
   return (
     <>
       <div
-        className="cursor-pointer rounded-md w-[40%] h-[200px]   text-lg text-center flex  flex-col
+        className="cursor-pointer rounded-md w-[40%] md:w-[30%]    text-lg text-center flex  flex-col 
        "
         onClick={() => setMostrarSelect(!mostrarSelect)}
       >
         <div
           className="
-          bg-gray-300  shadow-lg hover:bg-gray-200 p-2 rounded-lg relative w-full flex justify-between items-center h-[40px]"
+          bg-slate-200 uppercase shadow-lg hover:bg-sky-200 py-5 px-8 rounded-lg relative w-full flex justify-between items-center h-[70px]"
         >
           {categoria}
           <IconDown className="h-4" />
         </div>
         {mostrarSelect && (
-          <div className="float-left z-50  w-full  mt-2 bg-gray-300 rounded-lg shadow-lg text-left overflow-y-auto">
+          <div className="absolute z-50  top-20 w-[37%] md:w-[30%] h-[290px] overflow-auto mt-4 bg-gray-50 rounded-xl shadow-xl text-left ">
             {categorias.map((opcion) => {
               return (
                 <div
                   key={opcion.id}
                   data-valor={opcion.texto}
                   onClick={handleClick}
-                  className="p-2 hover:bg-gray-200 rounded-lg"
+                  className="p-2 hover:bg-gray-200 rounded-lg flex"
                 >
+                  <IconoCategoria nombre={opcion.id} />
                   {opcion.texto}
                 </div>
               );
