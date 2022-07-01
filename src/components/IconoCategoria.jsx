@@ -10,22 +10,22 @@ import { ReactComponent as IconoTransporte } from "./../imagenes/cat_transporte.
 
 export default function IconoCategoria({ nombre }) {
   switch (nombre) {
-    case "comida":
-      return <IconoComida className=" h-8 w-8 mr-2" />;
-    case "compras":
-      return <IconoCompras className=" h-8 w-8 mr-2" />;
-    case "cuentas y pagos":
-      return <IconoCuentasYPagos className=" h-8 w-8 mr-2" />;
-    case "diversion":
-      return <IconoDiversion className=" h-8 w-8 mr-2" />;
-    case "hogar":
-      return <IconoHogar className=" h-8 w-8 mr-2" />;
-    case "ropa":
-      return <IconoRopa className=" h-8 w-8 mr-2" />;
-    case "salud e higiene":
-      return <IconoSaludEHigiene className=" h-8 w-8 mr-2" />;
-    case "transporte":
-      return <IconoTransporte className=" h-8 w-8 mr-2" />;
+    case "Comida":
+      return <IconoComida className="rounded-xl  h-10 w-10 mr-2" />;
+    case "Compras":
+      return <IconoCompras className="rounded-xl  h-10 w-10 mr-2" />;
+    case "Cuentas y pagos":
+      return <IconoCuentasYPagos className="rounded-xl  h-10 w-10 mr-2" />;
+    case "Diversion":
+      return <IconoDiversion className="rounded-xl  h-10 w-10 mr-2" />;
+    case "Hogar":
+      return <IconoHogar className="rounded-xl  h-10 w-10 mr-2" />;
+    case "Ropa":
+      return <IconoRopa className=" rounded-xl h-10 w-10 mr-2" />;
+    case "Salud e Higiene":
+      return <IconoSaludEHigiene className=" rounded-xl h-10 w-10 mr-2" />;
+    case "Transporte":
+      return <IconoTransporte className=" rounded-xl h-10 w-10 mr-2" />;
     default:
       break;
   }

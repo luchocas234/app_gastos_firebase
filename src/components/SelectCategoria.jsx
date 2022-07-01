@@ -43,7 +43,7 @@ export default function SelectCategoria({ categoria, setCategoria }) {
                   onClick={handleClick}
                   className="p-2 hover:bg-gray-200 rounded-lg flex"
                 >
-                  <IconoCategoria nombre={opcion.id} />
+                  <IconoCategoria nombre={opcion.texto} />
                   {opcion.texto}
                 </div>
               );

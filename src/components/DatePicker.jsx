@@ -28,6 +28,7 @@ export default function DatePicker({ fecha, setFecha }) {
               className="m-2"
               selected={fecha}
               onSelect={setFecha}
+              onDayClick={() => setMostrarFecha(!mostrarFecha)}
             />
           </div>
         )}

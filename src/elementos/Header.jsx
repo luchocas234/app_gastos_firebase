@@ -19,9 +19,9 @@ export default function Header({
         <title>{helmet}</title>
       </Helmet>
 
-      <div className="flex w-full justify-start lg:justify-between py-10 p-6 lg:p-10  ">
+      <div className="flex w-full  justify-start lg:justify-between py-10 p-6 lg:p-10  ">
         {btnback && (
-          <div className="w-full flex flex-col gap-2 md:flex-row  items-center justify-between ">
+          <div className="w-full flex flex-col gap-6 md:flex-row  items-center justify-between ">
             <BtnBack />
             <h1 className="uppercase text-5xl text-center ">{title}</h1>
           </div>
@@ -36,9 +36,9 @@ export default function Header({
               </NavLink>
             )}
             {twobtn && (
-              <div className="flex justify-between items-center gap-2 ">
+              <div className="flex justify-between  items-center gap-2 ">
                 <NavLink to={"/categorias"}>
-                  <button className="btn">Categorias</button>
+                  <button className="btn ">Categorias</button>
                 </NavLink>
                 <NavLink to={"/lista"}>
                   <button className="btn">Lista de Gastos</button>

@@ -3,11 +3,17 @@ import { ReactComponent as IconoPlus } from "../imagenes/plus.svg";
 import SelectCategoria from "./SelectCategoria";
 import DatePicker from "./DatePicker";
 import "react-day-picker/dist/style.css";
+import agregarGasto from "../firebase/agregarGasto";
+import fromUnixTime from "date-fns/fromUnixTime";
+import getUnixTime from "date-fns/getUnixTime";
+import { useAuth } from "./../contextos/AuthContext";
+import toast from "react-hot-toast";
 
 export default function FormularioGasto() {
   const [inputDescripcion, setInputDescripcion] = useState("");
   const [inputCantidad, setInputCantidad] = useState("");
   const [categoria, setCategoria] = useState("Hogar");
+  const { usuario } = useAuth();
 
   const [fecha, setFecha] = useState(new Date());
 
@@ -21,13 +27,43 @@ export default function FormularioGasto() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //pasamos cantidad a numeros decimales.
+    let cantidad = parseFloat(inputCantidad).toFixed(2);
 
-    console.log(inputDescripcion, inputCantidad, categoria, fecha);
+    //comprobamos si hay descripción y un valor:
+    if (inputDescripcion !== "" && inputCantidad !== "") {
+      //guardamos en firebase toda la data más el Id del usuario que guardó la info.
+      if (cantidad) {
+        agregarGasto({
+          categoria: categoria,
+          descripcion: inputDescripcion,
+          cantidad: cantidad,
+          fecha: getUnixTime(fecha),
+          uidUsuario: usuario.uid,
+        })
+          .then(() => {
+            setCategoria("hogar");
+            setInputDescripcion("");
+            setInputCantidad("");
+            setFecha(new Date());
+            toast.success("¡Gasto agregado!");
+          })
+          .catch((error) => {
+            toast.error(
+              "Hubo un problema al intentar agregar tu gasto:" + error
+            );
+          });
+      } else {
+        toast.error("El valor que ingresaste no es correcto");
+      }
+    } else {
+      toast.error("Completa todos los valores");
+    }
   };
   return (
     <>
       <form
-        className="p-8 gap-4  h-full min-h-[600px]  flex w-full flex-col justify-around relative"
+        className="p-8 gap-4  h-full min-h-[500px]  flex w-full flex-col justify-around relative"
         onSubmit={handleSubmit}
       >
         <div className="absolute h-[40px]  top-0 left-0 px-6 flex w-full justify-between z-40 ">
