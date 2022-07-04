@@ -22,19 +22,19 @@ export default function SelectCategoria({ categoria, setCategoria }) {
   return (
     <>
       <div
-        className="cursor-pointer rounded-md w-[40%] md:w-[30%]    text-lg text-center flex  flex-col 
+        className="cursor-pointer rounded-md  h-full md:w-[30%] z-20   md:text-lg text-center flex  flex-col 
        "
         onClick={() => setMostrarSelect(!mostrarSelect)}
       >
         <div
           className="
-          bg-slate-200 uppercase shadow-lg hover:bg-sky-200 py-5 px-8 rounded-lg relative w-full flex justify-between items-center h-[70px]"
+          bg-slate-200 uppercase shadow-lg hover:bg-sky-200 h-full p-4 rounded-lg relative w-full flex justify-between items-center "
         >
           {categoria}
           <IconDown className="h-4" />
         </div>
         {mostrarSelect && (
-          <div className="absolute z-50  top-20 w-[37%] md:w-[30%] h-[290px] overflow-auto mt-4 bg-gray-50 rounded-xl shadow-xl text-left ">
+          <div className="absolute z-50  top-20 w-[50%] md:w-[30%] h-[290px] overflow-auto mt-4 bg-gray-50 rounded-xl shadow-xl text-left ">
             {categorias.map((opcion) => {
               return (
                 <div

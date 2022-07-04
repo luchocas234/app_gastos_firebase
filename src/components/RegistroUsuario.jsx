@@ -83,16 +83,21 @@ export default function RegistroUsuario() {
 
   return (
     <>
-      <div className="h-full w-full flex flex-col justify-center">
-        <Header title={"Crear cuenta"} rightbtn iniciobtn />
+      <div className="h-full w-full flex flex-col ">
+        <Header
+          title={"Crear cuenta"}
+          helmet={"Crear Cuenta"}
+          rightbtn
+          iniciobtn
+        />
         <Toaster />
         <form
           onSubmit={handleSubmit}
-          className="p-8  h-full flex w-full flex-col justify-around gap-4 "
+          className=" p-8   h-full flex w-full flex-col justify-around gap-4 "
         >
-          <SvgLogin className=" max-h-[100px] w-full mb-5" />
+          <SvgLogin className=" max-h-[150px] w-full mb-5" />
           <input
-            className="b-slate-400  uppercase font-thin py-8 border-b-2 text-center text-2xl sm:text-4xl"
+            className="b-slate-400   uppercase font-thin py-4 border-b-2 text-center text-2xl sm:text-4xl"
             type="email"
             name="email"
             placeholder="Correo Electronico"
@@ -100,7 +105,7 @@ export default function RegistroUsuario() {
             onChange={handleChange}
           />
           <input
-            className="b-slate-400 py-8 border-b-2 uppercase font-thin text-center text-2xl sm:text-4xl"
+            className="b-slate-400 py-4 border-b-2 uppercase font-thin text-center text-2xl sm:text-4xl"
             type="password"
             name="password"
             placeholder="Contraseña"
@@ -108,7 +113,7 @@ export default function RegistroUsuario() {
             onChange={handleChange}
           />
           <input
-            className="b-slate-400 py-8 border-b-2 uppercase font-thin text-center text-2xl sm:text-4xl"
+            className="b-slate-400 py-4 border-b-2 uppercase font-thin text-center text-2xl sm:text-4xl"
             type="password"
             name="password2"
             placeholder="Confirmar Contraseña"
@@ -116,7 +121,7 @@ export default function RegistroUsuario() {
             onChange={handleChange}
           />
           <div className="flex justify-center ">
-            <button className="btn-primary hover:bg-red-200" type="submit">
+            <button className="btn-primary hover:bg-violer-400" type="submit">
               Crear Cuenta
             </button>
           </div>

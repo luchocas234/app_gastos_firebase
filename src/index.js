@@ -22,9 +22,7 @@ root.render(
       <AuthProvider>
         <TotalGastadoProvider>
           <BrowserRouter>
-
-
-            <div className="bg-white w-[90%] m-auto max-w-[1200px] h-[95vh] lg:h-[90vh] lg:max-h-[900px] overflow-y-auto shadow-2xl rounded-lg flex flex-col justify-between relative z-20">
+            <div className="bg-white w-[90%]  mx-auto max-w-[1200px] h-[85vh] md:h-[95vh] lg:max-h-[800px] overflow-auto shadow-2xl rounded-lg flex flex-col items-center justify-between relative z-20">
               <Routes>
                 <Route path="*" element={<Error404 />} />
                 <Route path="/iniciar-sesion" element={<InicioSesion />} />
@@ -64,8 +62,6 @@ root.render(
           </BrowserRouter>
         </TotalGastadoProvider>
       </AuthProvider>
-
-
     </React.StrictMode>
   </>
 );

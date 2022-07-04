@@ -107,7 +107,7 @@ export default function EditarGasto() {
         className="p-8 py-10 gap-4  h-full min-h-[500px]  flex w-full flex-col justify-around relative"
         onSubmit={handleSubmit}
       >
-        <div className="absolute h-[40px]  top-0 left-0 px-6 flex w-full justify-between z-40 ">
+        <div className="absolute  h-[50px] gap-4 top-0 left-0 px-6 flex  w-full justify-between z-40">
           <SelectCategoria categoria={categoria} setCategoria={setCategoria} />
           <DatePicker fecha={fecha} setFecha={setFecha} />
         </div>
@@ -122,7 +122,7 @@ export default function EditarGasto() {
         />
         <input
           className="  b-slate-400 h-[30%] border-b-2 uppercase text-center text-6xl font-extrabold placeholder:text-6xl "
-          type="text"
+          type="number"
           name="cant"
           placeholder="$0.00"
           value={inputCantidad}

@@ -14,11 +14,11 @@
 
 body {
   background-image: url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80");
-  min-height: 100vh;
   display: flex;
+  height: 100vh;
+
   align-items: center;
   justify-content: center;
-
   font-family: "Work Sans", sans-serif;
 }
 
@@ -26,24 +26,27 @@ body {
   width: 100%;
 }
 
-@media screen and (max-width: 60rem) {
+@media screen and (max-width: 500px) {
   /* 950px */
   :root {
     font-size: 14px;
   }
+  body {
+    height: 90vh;
+  }
 }
 
 .btn-primary {
-  @apply px-6 py-5 
+  @apply px-6 py-3 
   text-white font-semibold bg-[#5B69E2] hover:bg-[#848ee5]  hover:scale-105 transition-all duration-150 ease-in-out rounded-lg shadow-md;
 }
 
 .btn {
-  @apply py-5 px-4
+  @apply p-3
   text-white hover:scale-105 transition-all duration-150 ease-in-out flex justify-center items-center rounded-lg shadow-md bg-black;
 }
 
 .btn-icon {
-  @apply py-5 px-6
+  @apply py-3 px-4
    text-white hover:scale-105 transition-all duration-150 ease-in-out flex justify-center items-center rounded-lg shadow-md bg-black;
 }

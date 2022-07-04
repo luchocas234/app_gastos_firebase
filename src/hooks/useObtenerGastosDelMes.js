@@ -15,23 +15,25 @@ const useObtenerGastosDelMes = () => {
         const inicioDeMes = getUnixTime(startOfMonth(new Date()))
         const finDeMes = getUnixTime(endOfMonth(new Date()))
 
-        //esto es una consulta, usamos query para realizarla, luego utilizamos las demas funciones
-        const consulta = query(
-            collection(db, 'gastos'),
-            orderBy('fecha', 'desc'),
-            where('fecha', '>=', inicioDeMes),
-            where('fecha', '<=', finDeMes),
-            where('uidUsuario', '==', usuario.uid)
-        )
-        const unsuscribe = onSnapshot(consulta, (snapshot) => {
-            setGastos(snapshot.docs.map((documento) => {
-                return { ...documento.data(), id: documento.id }
-            }))
-        }, (error) => { console.log(error) })
+        if (usuario) {
+            //esto es una consulta, usamos query para realizarla, luego utilizamos las demas funciones
+            const consulta = query(
+                collection(db, 'gastos'),
+                orderBy('fecha', 'desc'),
+                where('fecha', '>=', inicioDeMes),
+                where('fecha', '<=', finDeMes),
+                where('uidUsuario', '==', usuario.uid)
+            )
+            const unsuscribe = onSnapshot(consulta, (snapshot) => {
+                setGastos(snapshot.docs.map((documento) => {
+                    return { ...documento.data(), id: documento.id }
+                }))
+            }, (error) => { console.log(error) })
 
 
 
-
+            return unsuscribe;
+        }
     }, [usuario])
 
 

@@ -16,15 +16,15 @@ export default function GastosPorCategoria() {
         btnback
         title={"Gastos por Categoria"}
       />
-      <ul className="h-full overflow-auto p-10 list-none">
+      <ul className="h-full overflow-auto w-full px-4 md:px-10 list-none">
         {gastosPorCategoria.map((elemento, index) => {
           return (
             <li className="p-5 border-b-2 flex justify-between" key={index}>
-              <div className="text-xl flex items-center uppercase">
+              <div className="md:text-xl flex items-center uppercase">
                 <IconoCategoria nombre={elemento.categoria} />
                 {elemento.categoria}
               </div>
-              <div className=" text-xl flex items-center font-semibold">
+              <div className=" md:text-xl flex items-center font-semibold">
                 {convertirAMoneda(elemento.cantidad)}
               </div>
             </li>

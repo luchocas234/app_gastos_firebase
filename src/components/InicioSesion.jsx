@@ -64,13 +64,18 @@ export default function InicioSesion() {
 
   return (
     <>
-      <Header title={"Inicio Sesion"} rightbtn regisbtn />
+      <Header
+        title={"Inicio Sesion"}
+        helmet={"Inicio Sesion"}
+        rightbtn
+        regisbtn
+      />
 
       <form
         onSubmit={handleSubmit}
         className="p-8  h-full flex w-full flex-col justify-around gap-4 "
       >
-        <SvgLogin className=" max-h-[200px] w-full mb-5" />
+        <SvgLogin className="  max-h-[150px] w-full mb-5" />
         <input
           className="b-slate-400  uppercase font-thin pb-8 border-b-2 text-center text-2xl sm:text-4xl"
           type="email"
@@ -87,7 +92,7 @@ export default function InicioSesion() {
           value={password}
           onChange={handleChange}
         />
-        <div className="flex justify-center m-10">
+        <div className="flex justify-center ">
           <button className="btn-primary" type="submit">
             Iniciar Sesion
           </button>

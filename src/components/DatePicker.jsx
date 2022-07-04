@@ -13,16 +13,17 @@ export default function DatePicker({ fecha, setFecha }) {
 
   return (
     <>
-      <div className="rounded-md select-none w-[60%] max-w-[300px]   text-lg text-center flex  flex-col justify-between">
+      <div className="rounded-md select-none w-full  max-w-[300px] z-50  flex flex-col md:text-lg text-center  justify-between">
         <div
           className="
-          bg-slate-200 uppercase shadow-lg  cursor-pointer hover:bg-sky-200 py-5 px-6 text-center rounded-lg relative w-full flex justify-between items-center h-[70px]"
+          
+          bg-slate-200 uppercase shadow-lg   cursor-pointer  hover:bg-sky-200  transition-all ease-in-out duration-150 text-center rounded-lg relative w-full flex justify-between items-center h-full p-4 md:px-6"
           onClick={() => setMostrarFecha(!mostrarFecha)}
         >
           {formatFecha(fecha)}
         </div>
         {mostrarFecha && (
-          <div className="active:transition-all active:delay-400 float mt-4 flex items-center justify-center rounded-lg shadow-xl bg-gray-50 mr-4 w-full ">
+          <div className="absolute top-16 right-0 active:transition-all active:delay-400 mt-4 flex  items-center transition-all ease-in-out duration-150 justify-center  rounded-lg shadow-xl bg-gray-50 mr-4  ">
             <DayPicker
               mode="single"
               className="m-2"

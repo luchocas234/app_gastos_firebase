@@ -11,7 +11,6 @@ const RutaProtegida = ({ children }) => {
   } else {
     return (
       <div>
-        {toast.error("URL Bloqueada, inicie sesion")}
         <Navigate replace to="/iniciar-sesion" />
       </div>
     );
